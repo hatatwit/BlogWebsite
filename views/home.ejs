@@ -1,0 +1,17 @@
+<%- include("partials/header"); %>
+
+<h1>Home</h1>
+<p><%= homeStartingContent %></p>
+
+<!-- First way using for loop -->
+<!-- <% for (var i = 0; i<posts.length; i++) { %>
+    <p><%=posts[i].title%> - <%=posts[i].post%></p> 
+<% } %> -->
+
+<!-- Second way using forEach() -->
+<% posts.forEach(function(item){ %>
+    <h1><%=item.title%></h1>
+    <p class="ellipsis"><%=item.post.substring(0, 100) + "..."%></p><a href="/posts/<%=item._id%>">Read More</a>
+<% }) %>
+
+<%- include("partials/footer"); %>
